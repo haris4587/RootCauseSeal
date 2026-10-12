@@ -136,19 +136,22 @@ def assess(incident: str, manifest: list) -> dict:
     texts, error = inspect_evidence(manifest)
     if error:
         return failure(error)
-    task = """Return JSON with exactly checks and summary. checks has the six policy IDs.
+    task = """Return JSON with exactly checks and summary. checks is an OBJECT keyed by
+incident, timeline, cause, actions, ownership, verification (not a list).
 Each value has state (SUPPORTED/MISSING/CONTRADICTED/UNKNOWN), reason (<=500 chars),
 citations (0-3 objects with source integer and quote exact substring <=350 chars).
 SUPPORTED/CONTRADICTED require citations. Supported cause MUST cite non-report evidence.
 summary <=800 chars. Evaluate all six checks independently. Do not return an outcome;
 the contract derives it. For ownership, an unnamed team or 'TBD' is MISSING.
 For verification, 'monitor/improve reliability' without measurable criteria is MISSING.
+Shape: {"checks":{"incident":{"state":"SUPPORTED","reason":"...","citations":[{"source":0,"quote":"exact text"}]},"timeline":{...},"cause":{...},"actions":{...},"ownership":{...},"verification":{...}},"summary":"..."}
 """
     data = {"incident": incident, "policy": POLICY, "artifacts": [{"source": i, "role": manifest[i]["role"], "text": t} for i, t in enumerate(texts)]}
     try:
         answer = gl.nondet.exec_prompt(GUARD + task + "\nDATA_JSON:\n" + canonical(data), response_format="json")
         return normalize(answer, texts, manifest)
-    except Exception:
+    except Exception as exc:
+        gl.trace("RootCauseSeal invalid assessment", str(exc)[:200])
         return failure("INVALID_ASSESSMENT")
 
 

@@ -17,6 +17,7 @@ class GenericMap(dict):
     @classmethod
     def __class_getitem__(cls, item): return cls
 gl = types.SimpleNamespace(Contract=object, public=types.SimpleNamespace(write=lambda f:f, view=lambda f:f),
+    trace=lambda *a:None,
     message=types.SimpleNamespace(sender_address="owner", contract_address="contract", chain_id=61999),
     vm=types.SimpleNamespace(UserError=UserError, Return=Return),
     nondet=types.SimpleNamespace(web=types.SimpleNamespace(), exec_prompt=None))

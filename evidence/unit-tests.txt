@@ -40,6 +40,6 @@ test_unsupported_outcome_injection (test_contract.Tests.test_unsupported_outcome
 test_validator_rejects_disagreement (test_contract.Tests.test_validator_rejects_disagreement) ... ok
 
 ----------------------------------------------------------------------
-Ran 40 tests in 0.008s
+Ran 40 tests in 0.012s
 
 OK
