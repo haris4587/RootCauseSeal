@@ -1,0 +1,34 @@
+{
+  "network": "GenLayer Studio public sandbox",
+  "chain_id": 61999,
+  "genvm": "v0.2.16",
+  "execution_mode": "Normal (Full Consensus)",
+  "owner": "0xabDa0405Bb3306647c4f03653017a3AD733FB9BC",
+  "contract_address": "0xf31106d0064d54F829fc4eBB377526C33c193A86",
+  "deployment_transaction": "0x4761aa2787d59330eb7c784e59b8b76224fc6c19568f89494867669d0bbe2946",
+  "registration_transaction": "0xadb1ce3e983e3f3d70e9a2d6964850e376504ef2ac020c5acf5931e5ea6320bd",
+  "full_consensus_transaction": "0x03207367aee7611f6190722234b4b7757a511bd5926a712fd347c92d75a6cce2",
+  "source_commit": "dd10cd393d2dab2167334ef3bd053768e67372cb",
+  "source_sha256": "19708247833015348587601964c2bd1ca8eac1e0d86ac259bf323575c349ba7d",
+  "fixture_commit": "60d3cb3d0657c110779ac4aa6207e37f5124bd09",
+  "case_id": "6a951f097b5d3d0b99d14a5db4ae5e7cdcee56357a78473a09de8a0d2af143c0",
+  "decision_hash": "72ada20981677780cb9120a87d045cbf1686d8570eafcbf1a5eee0b6ac9c8306",
+  "outcome": "ACTION_REQUIRED",
+  "finalized": true,
+  "tests": {
+    "unit_tests": 41,
+    "host_apis": "mocked",
+    "genvm_lint": "PASS",
+    "sdk_validation": "PASS",
+    "schema": "PASS",
+    "source_byte_comparison": "PASS",
+    "decision_hash_verification": "PASS"
+  },
+  "votes": {
+    "agree": 3,
+    "disagree": 1,
+    "idle": 1
+  },
+  "finalized_at_displayed": "2026-10-12 13:20:03 Asia/Colombo",
+  "finalized_at_utc": "2026-10-12T07:50:03Z"
+}

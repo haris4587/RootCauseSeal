@@ -25,6 +25,10 @@ Deploy `contracts/root_cause_seal.py` with publisher `haris4587/RootCauseSeal` (
 
 Cases include chain ID, contract address and owner in their hash. Decision SHA-256 covers canonical compact sorted-key ASCII-escaped UTF-8 JSON of the stored `decision` object. Recompute using `digest()` in the contract. The `hash` wrapper field is excluded.
 
+## Verified live result
+
+A real Studio Full Consensus review finalized ACTION_REQUIRED for missing action owners and due dates, with five other checks supported. All 41 offline tests pass. Deployed source bytes, fixture fingerprints, package ID and decision hash were independently verified. [Submission package](docs/SUBMISSION.md) · [Finalized decision](evidence/finalized-decision.json).
+
 ## Verification
 
 ```sh

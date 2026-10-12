@@ -1,0 +1,129 @@
+- navigation:
+  - link "GenLayer Logo GenLayer Studio Explorer":
+    - /url: /
+    - img "GenLayer Logo"
+    - generic: GenLayer Studio Explorer
+  - link "Dashboard":
+    - /url: /
+    - generic: Dashboard
+  - link "Transactions":
+    - /url: /txs
+    - generic: Transactions
+  - link "Validators":
+    - /url: /validators
+    - generic: Validators
+  - link "Contracts":
+    - /url: /contracts
+    - generic: Contracts
+  - link "Providers":
+    - /url: /providers
+    - generic: Providers
+  - button "Search... Ctrl+K":
+    - generic: Search...
+    - generic: Ctrl+K
+  - button "Toggle theme":
+    - generic: Toggle theme
+- generic: "Transactions: 923,599"
+- generic: "Validators: 20"
+- generic: "Contracts: 165,216"
+- generic: Connected
+- main:
+  - link "Back to transactions":
+    - /url: /txs
+    - text: Back to transactions
+  - heading "Transaction Details" [level=1]
+  - code: "0x03207367aee7611f6190722234b4b7757a511bd5926a712fd347c92d75a6cce2"
+  - button "Copy to clipboard":
+  - generic: FINALIZED
+  - generic: Call
+  - tablist:
+    - tab "Overview" [selected]:
+      - text: Overview
+    - tab "Monitoring":
+      - text: Monitoring
+    - tab "Consensus":
+      - text: Consensus
+    - tab "Data":
+      - text: Data
+    - tab "Related (0)":
+      - text: Related (0)
+  - tabpanel "Overview":
+    - generic: Hash
+    - generic: "0x03207367aee7611f6190722234b4b7757a511bd5926a712fd347c92d75a6cce2"
+    - button "Copy to clipboard":
+    - generic: Status
+    - generic: FINALIZED
+    - generic: Type
+    - generic: Call
+    - generic: From
+    - link "0xabDa0405Bb3306647c4f03653017a3AD733FB9BC":
+      - /url: /address/0xabDa0405Bb3306647c4f03653017a3AD733FB9BC
+    - button "Copy to clipboard":
+    - generic: To
+    - link "0xf31106d0064d54F829fc4eBB377526C33c193A86":
+      - /url: /address/0xf31106d0064d54F829fc4eBB377526C33c193A86
+    - button "Copy to clipboard":
+    - generic: Value
+    - generic: 0 GEN
+    - generic: Nonce
+    - generic: "11"
+    - generic: Gas Limit
+    - generic: "-"
+    - generic: Created At
+    - generic: Oct 12, 2026, 1:17:33 PM
+    - generic: Execution Mode
+    - generic: Normal
+    - generic: Rotation Count
+    - generic: "0"
+    - generic: Initial Validators
+    - generic: "5"
+    - generic: Consensus Result
+    - generic: Accepted
+    - heading "Input Data" [level=4]
+    - button "decoded"
+    - button "hex"
+    - button "raw"
+    - button "Export JSON":
+      - text: Export JSON
+    - button "Copy":
+      - text: Copy
+    - generic: Method
+    - code: review
+    - generic: Parameters
+    - table:
+      - rowgroup:
+        - row "# Value":
+          - columnheader "#"
+          - columnheader "Value"
+      - rowgroup:
+        - row "0 6a951f097b5d3d0b99d14a5db4ae5e7cdcee56357a78473a09de8a0d2af143c0":
+          - cell "0"
+          - cell "6a951f097b5d3d0b99d14a5db4ae5e7cdcee56357a78473a09de8a0d2af143c0"
+    - heading "GenVM Execution" [level=4]
+    - generic: Execution Result
+    - generic: SUCCESS
+    - generic: Result Code
+    - generic: Return
+    - generic: Return Value
+    - code: "\"72ada20981677780cb9120a87d045cbf1686d8570eafcbf1a5eee0b6ac9c8306\""
+    - generic: Stdout
+    - generic: (empty)
+    - generic: Stderr
+    - generic: (empty)
+    - heading "Equivalence Principle Outputs" [level=4]
+    - generic: "0"
+    - generic: Return
+    - code: "{\"checks\":{\"actions\":{\"citations\":[{\"quote\":\"Corrective action A: enforce worker concurrency <= connection-pool capacity during configuration validation\"\"source\":0},{\"quote\":\"with a test rejecting concurrency 100/pool 40 and accepting concurrency 20/pool 40.\"\"source\":0},{\"quote\":\"Corrective action B: add a 100-worker staging load test, requiring fewer than 0.1% HTTP 503 responses and p99 pool wait below 100 ms for 15 minutes.\"\"source\":0},]\"reason\":\"The report includes specific corrective actions aimed at preventing recurrence by validating concurrency against pool capacity and adding a representative 100-worker load test, beyond the immediate rollback.\"\"state\":\"SUPPORTED\"}\"cause\":{\"citations\":[{\"quote\":\"Trace reproduction: workers 100 / pool 40 produced pool waits reaching 2000 ms and 503; workers 20 / pool 40 eliminated waits and 503 under the same request rate.\"\"source\":1},{\"quote\":\"This isolates concurrency/pool mismatch rather than database downtime.\"\"source\":1},{\"quote\":\"Pre-release load-test record: 10 concurrent workers only; no 100-worker scenario executed.\"\"source\":1},]\"reason\":\"The report states a specific mechanism: 100 workers contended for a pool of 40, causing waits to hit the 2-second deadline and return 503s; it also names a contributing factor. Non-report evidence supports both the mechanism and the missed test coverage.\"\"state\":\"SUPPORTED\"}\"incident\":{\"citations\":[{\"quote\":\"Incident RCA-DEMO-001: checkout-api connection-pool exhaustion.\"\"source\":0},{\"quote\":\"Impact: checkout-api returned 1,200 HTTP 503 responses during 09:00-09:08 UTC; 600 customers retried checkout.\"\"source\":0},{\"quote\":\"Impact rollup 09:00-09:08: 1200 HTTP 503, 600 distinct affected customers; no writes lost.\"\"source\":1},]\"reason\":\"The report identifies the incident ID, affected service, measurable impact, and UTC time window, and the evidence corroborates those details.\"\"state\":\"SUPPORTED\"}\"ownership\":{\"citations\":[]\"reason\":\"The report does not provide named responsible owners or explicit calendar due dates for each corrective action; it explicitly says ownership and due dates are TBD.\"\"state\":\"MISSING\"}\"timeline\":{\"citations\":[{\"quote\":\"UTC 2026-10-10 09:00 deployment changed worker concurrency from 20 to 100\"\"source\":0},{\"quote\":\"09:02 alert fired for checkout errors. 09:05 responders disabled the new concurrency setting. 09:08 recovery confirmed.\"\"source\":0},{\"quote\":\"09:02 alert checkout_http_503_rate triggered.\\n09:05 rollback workers=20, database_pool=40.\\n09:08 health recovery: pool wait p99=20 ms, HTTP 503 rate=0.00%.\"\"source\":1},]\"reason\":\"The report provides an ordered UTC sequence covering trigger, detection, mitigation, and recovery, and the evidence matches those times and events.\"\"state\":\"SUPPORTED\"}\"verification\":{\"citations\":[{\"quote\":\"with a test rejecting concurrency 100/pool 40 and accepting concurrency 20/pool 40.\"\"source\":0},{\"quote\":\"requiring fewer than 0.1% HTTP 503 responses and p99 pool wait below 100 ms for 15 minutes.\"\"source\":0},]\"reason\":\"Each corrective action has a measurable acceptance criterion: config validation must reject/accept specified settings, and the staging test has numeric error-rate, latency, and duration thresholds.\"\"state\":\"SUPPORTED\"}}\"outcome\":\"ACTION_REQUIRED\"\"summary\":\"Incident, timeline, cause, actions, and verification are supported by the report and corroborating fixture evidence. The causal mechanism is specifically grounded in non-report evidence showing workers 100/pool 40 drove 2000 ms waits and 503s, while workers 20/pool 40 did not. Ownership is missing because the report states owners and due dates are TBD rather than naming responsible parties with explicit dates.\"}"
+    - img "Pending — reached":
+    - generic: Pending
+    - img "Proposing — reached":
+    - generic: Proposing
+    - img "Committing — reached":
+    - generic: Committing
+    - img "Revealing — reached":
+    - generic: Revealing
+    - img "Accepted — reached":
+    - generic: Accepted
+    - button "Finalized — Oct 12, 2026, 1:20:03 PM"
+    - generic: Finalized
+- alert

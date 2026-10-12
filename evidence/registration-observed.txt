@@ -1,0 +1,128 @@
+- navigation:
+  - link "GenLayer Logo GenLayer Studio Explorer":
+    - /url: /
+    - img "GenLayer Logo"
+    - generic: GenLayer Studio Explorer
+  - link "Dashboard":
+    - /url: /
+    - generic: Dashboard
+  - link "Transactions":
+    - /url: /txs
+    - generic: Transactions
+  - link "Validators":
+    - /url: /validators
+    - generic: Validators
+  - link "Contracts":
+    - /url: /contracts
+    - generic: Contracts
+  - link "Providers":
+    - /url: /providers
+    - generic: Providers
+  - button "Search... Ctrl+K":
+    - generic: Search...
+    - generic: Ctrl+K
+  - button "Toggle theme":
+    - generic: Toggle theme
+- generic: "Transactions: 923,423"
+- generic: "Validators: 20"
+- generic: "Contracts: 165,174"
+- generic: Connected
+- main:
+  - link "Back to transactions":
+    - /url: /txs
+    - text: Back to transactions
+  - heading "Transaction Details" [level=1]
+  - code: "0x3e2393cd8434d3eaf444486b2d12abcaecc25c8af49adf180f44c5cc3d1b7b60"
+  - button "Copy to clipboard":
+  - generic: FINALIZED
+  - generic: Call
+  - tablist:
+    - tab "Overview" [active] [selected]:
+      - text: Overview
+    - tab "Monitoring":
+      - text: Monitoring
+    - tab "Consensus":
+      - text: Consensus
+    - tab "Data":
+      - text: Data
+    - tab "Related (0)":
+      - text: Related (0)
+  - tabpanel "Overview":
+    - generic: Hash
+    - generic: "0x3e2393cd8434d3eaf444486b2d12abcaecc25c8af49adf180f44c5cc3d1b7b60"
+    - button "Copy to clipboard":
+    - generic: Status
+    - generic: FINALIZED
+    - generic: Type
+    - generic: Call
+    - generic: From
+    - link "0xabDa0405Bb3306647c4f03653017a3AD733FB9BC":
+      - /url: /address/0xabDa0405Bb3306647c4f03653017a3AD733FB9BC
+    - button "Copy to clipboard":
+    - generic: To
+    - link "0xCAAE117ebf0664e9Cd72cfc4b3BDcB0A5ff49780":
+      - /url: /address/0xCAAE117ebf0664e9Cd72cfc4b3BDcB0A5ff49780
+    - button "Copy to clipboard":
+    - generic: Value
+    - generic: 0 GEN
+    - generic: Nonce
+    - generic: "1"
+    - generic: Gas Limit
+    - generic: "-"
+    - generic: Created At
+    - generic: Oct 12, 2026, 12:58:35 PM
+    - generic: Execution Mode
+    - generic: Normal
+    - generic: Rotation Count
+    - generic: "0"
+    - generic: Initial Validators
+    - generic: "5"
+    - generic: Consensus Result
+    - generic: Accepted
+    - heading "Input Data" [level=4]
+    - button "decoded"
+    - button "hex"
+    - button "raw"
+    - button "Export JSON":
+      - text: Export JSON
+    - button "Copy":
+      - text: Copy
+    - generic: Method
+    - code: register
+    - generic: Parameters
+    - table:
+      - rowgroup:
+        - row "# Value":
+          - columnheader "#"
+          - columnheader "Value"
+      - rowgroup:
+        - row "0 RCA-DEMO-001":
+          - cell "0"
+          - cell "RCA-DEMO-001"
+        - 'row "1 [{\"url\":\"https://raw.githubusercontent.com/haris4587/RootCauseSeal/60d3cb3d0657c110779ac4aa6207e37f5124bd09/fixtures/postmortem.txt\",\"sha256\":\"02c4f39cc68fb8de92088964d9daeecf4be2a41acd47a7f3f32189f4e23790cd\",\"bytes\":1261,\"role\":\"report\"},{\"url\":\"https://raw.githubusercontent.com/haris4587/RootCauseSeal/60d3cb3d0657c110779ac4aa6207e37f5124bd09/fixtures/telemetry.txt\",\"sha256\":\"f166d4c9bc5e8a4e36e620a113e1061fab277118b214c1e18b749d24dc0d4baf\",\"bytes\":941,\"role\":\"evidence\"}]"':
+          - cell "1"
+          - 'cell "[{\"url\":\"https://raw.githubusercontent.com/haris4587/RootCauseSeal/60d3cb3d0657c110779ac4aa6207e37f5124bd09/fixtures/postmortem.txt\",\"sha256\":\"02c4f39cc68fb8de92088964d9daeecf4be2a41acd47a7f3f32189f4e23790cd\",\"bytes\":1261,\"role\":\"report\"},{\"url\":\"https://raw.githubusercontent.com/haris4587/RootCauseSeal/60d3cb3d0657c110779ac4aa6207e37f5124bd09/fixtures/telemetry.txt\",\"sha256\":\"f166d4c9bc5e8a4e36e620a113e1061fab277118b214c1e18b749d24dc0d4baf\",\"bytes\":941,\"role\":\"evidence\"}]"'
+    - heading "GenVM Execution" [level=4]
+    - generic: Execution Result
+    - generic: SUCCESS
+    - generic: Result Code
+    - generic: Return
+    - generic: Return Value
+    - code: "\"7cbf97ca01d2caefe1880da4e6f1f3839b219af4237d552f7b9b43982a8c6274\""
+    - generic: Stdout
+    - generic: (empty)
+    - generic: Stderr
+    - generic: (empty)
+    - img "Pending — reached":
+    - generic: Pending
+    - img "Proposing — reached":
+    - generic: Proposing
+    - img "Committing — reached":
+    - generic: Committing
+    - img "Revealing — reached":
+    - generic: Revealing
+    - img "Accepted — reached":
+    - generic: Accepted
+    - button "Finalized — Oct 12, 2026, 12:59:10 PM"
+    - generic: Finalized
+- alert

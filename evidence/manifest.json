@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/haris4587/RootCauseSeal/60d3cb3d0657c110779ac4aa6207e37f5124bd09/fixtures/postmortem.txt",
+    "sha256": "02c4f39cc68fb8de92088964d9daeecf4be2a41acd47a7f3f32189f4e23790cd",
+    "bytes": 1261,
+    "role": "report"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/haris4587/RootCauseSeal/60d3cb3d0657c110779ac4aa6207e37f5124bd09/fixtures/telemetry.txt",
+    "sha256": "f166d4c9bc5e8a4e36e620a113e1061fab277118b214c1e18b749d24dc0d4baf",
+    "bytes": 941,
+    "role": "evidence"
+  }
+]

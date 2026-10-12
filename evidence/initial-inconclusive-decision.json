@@ -1,0 +1,14 @@
+{
+  "decision": {
+    "attempt": 1,
+    "case_id": "7cbf97ca01d2caefe1880da4e6f1f3839b219af4237d552f7b9b43982a8c6274",
+    "domain": "RootCauseSeal/decision/1",
+    "policy_hash": "93c38b22b9244566ce7e77cc89bef614f1aad8cbc3cc60c5055bea942353ca15",
+    "previous": "",
+    "result": {
+      "error": "INVALID_ASSESSMENT",
+      "outcome": "INCONCLUSIVE"
+    }
+  },
+  "hash": "15a70f8afb57a2b7b52218093e5f29f13b0c67598247dae2597dc3eea2d0a2b0"
+}
