@@ -1,0 +1,10 @@
+SYNTHETIC TEST FIXTURE — generated observations, not production telemetry.
+Incident RCA-DEMO-001; service checkout-api; all timestamps UTC 2026-10-10.
+09:00 deployment config: workers=100, database_pool=40; previous workers=20.
+09:01 trace: request deadline 2000 ms, pool wait 2000 ms, HTTP 503; database CPU 22%, database available, connection-pool queue length 60.
+09:02 alert checkout_http_503_rate triggered.
+09:05 rollback workers=20, database_pool=40.
+09:08 health recovery: pool wait p99=20 ms, HTTP 503 rate=0.00%.
+Impact rollup 09:00-09:08: 1200 HTTP 503, 600 distinct affected customers; no writes lost.
+Pre-release load-test record: 10 concurrent workers only; no 100-worker scenario executed.
+Trace reproduction: workers 100 / pool 40 produced pool waits reaching 2000 ms and 503; workers 20 / pool 40 eliminated waits and 503 under the same request rate. This isolates concurrency/pool mismatch rather than database downtime.

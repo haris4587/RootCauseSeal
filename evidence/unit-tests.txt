@@ -1,0 +1,45 @@
+test_all_outcomes_and_precedence (test_contract.Tests.test_all_outcomes_and_precedence) ... ok
+test_boolean_citation_index (test_contract.Tests.test_boolean_citation_index) ... ok
+test_capacity (test_contract.Tests.test_capacity) ... ok
+test_cause_cannot_use_report_alone (test_contract.Tests.test_cause_cannot_use_report_alone) ... ok
+test_cross_deployment_domain (test_contract.Tests.test_cross_deployment_domain) ... ok
+test_duplicate_package (test_contract.Tests.test_duplicate_package) ... ok
+test_empty_reason (test_contract.Tests.test_empty_reason) ... ok
+test_equivalence_exact_states (test_contract.Tests.test_equivalence_exact_states) ... ok
+test_failed_vm_result_rejected (test_contract.Tests.test_failed_vm_result_rejected) ... ok
+test_fetch_exception (test_contract.Tests.test_fetch_exception) ... ok
+test_http_error (test_contract.Tests.test_http_error) ... ok
+test_incident_bound (test_contract.Tests.test_incident_bound) ... ok
+test_inconclusive_retry_and_history (test_contract.Tests.test_inconclusive_retry_and_history) ... ok
+test_independent_semantic_review (test_contract.Tests.test_independent_semantic_review) ... ok
+test_invalid_model_safe (test_contract.Tests.test_invalid_model_safe) ... ok
+test_invalid_utf8 (test_contract.Tests.test_invalid_utf8) ... ok
+test_length_mismatch_safe (test_contract.Tests.test_length_mismatch_safe) ... ok
+test_malformed_json (test_contract.Tests.test_malformed_json) ... ok
+test_manifest_bounds (test_contract.Tests.test_manifest_bounds) ... ok
+test_manifest_duplicates (test_contract.Tests.test_manifest_duplicates) ... ok
+test_manifest_rejects_adversarial_urls (test_contract.Tests.test_manifest_rejects_adversarial_urls) ... ok
+test_manifest_valid (test_contract.Tests.test_manifest_valid) ... ok
+test_missing_check (test_contract.Tests.test_missing_check) ... ok
+test_model_exception_safe (test_contract.Tests.test_model_exception_safe) ... ok
+test_null_body (test_contract.Tests.test_null_body) ... ok
+test_owner_register (test_contract.Tests.test_owner_register) ... ok
+test_owner_review (test_contract.Tests.test_owner_review) ... ok
+test_package_hash_binds_evidence_and_policy (test_contract.Tests.test_package_hash_binds_evidence_and_policy) ... ok
+test_prompt_boundary (test_contract.Tests.test_prompt_boundary) ... ok
+test_quote_forgery (test_contract.Tests.test_quote_forgery) ... ok
+test_reason_bound (test_contract.Tests.test_reason_bound) ... ok
+test_required_citation (test_contract.Tests.test_required_citation) ... ok
+test_retry_cap (test_contract.Tests.test_retry_cap) ... ok
+test_semantic_judge_rejects (test_contract.Tests.test_semantic_judge_rejects) ... ok
+test_tampered_evidence_safe (test_contract.Tests.test_tampered_evidence_safe) ... ok
+test_too_many_sources (test_contract.Tests.test_too_many_sources) ... ok
+test_two_reports_rejected (test_contract.Tests.test_two_reports_rejected) ... ok
+test_unknown_case_and_decision (test_contract.Tests.test_unknown_case_and_decision) ... ok
+test_unsupported_outcome_injection (test_contract.Tests.test_unsupported_outcome_injection) ... ok
+test_validator_rejects_disagreement (test_contract.Tests.test_validator_rejects_disagreement) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.008s
+
+OK

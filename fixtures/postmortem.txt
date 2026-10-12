@@ -1,0 +1,8 @@
+SYNTHETIC TEST FIXTURE — not a real customer incident.
+Incident RCA-DEMO-001: checkout-api connection-pool exhaustion.
+UTC 2026-10-10 09:00 deployment changed worker concurrency from 20 to 100 without increasing the database pool of 40.
+09:02 alert fired for checkout errors. 09:05 responders disabled the new concurrency setting. 09:08 recovery confirmed.
+Impact: checkout-api returned 1,200 HTTP 503 responses during 09:00-09:08 UTC; 600 customers retried checkout. No data loss occurred.
+Root cause: 100 workers competed for 40 database connections; pool waits reached the 2-second request deadline and generated 503 responses. Contributing factor: load tests had only 10 concurrent workers, so the capacity mismatch escaped release checks. Reverting concurrency removed the bottleneck.
+Immediate mitigation: restore concurrency to 20. Corrective action A: enforce worker concurrency <= connection-pool capacity during configuration validation, with a test rejecting concurrency 100/pool 40 and accepting concurrency 20/pool 40. Corrective action B: add a 100-worker staging load test, requiring fewer than 0.1% HTTP 503 responses and p99 pool wait below 100 ms for 15 minutes.
+Owners and due dates: TBD. The corrective actions are planned, not completed.
