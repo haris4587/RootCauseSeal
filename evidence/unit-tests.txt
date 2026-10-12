@@ -1,5 +1,6 @@
 test_all_outcomes_and_precedence (test_contract.Tests.test_all_outcomes_and_precedence) ... ok
 test_boolean_citation_index (test_contract.Tests.test_boolean_citation_index) ... ok
+test_bounded_citation_repair (test_contract.Tests.test_bounded_citation_repair) ... ok
 test_capacity (test_contract.Tests.test_capacity) ... ok
 test_cause_cannot_use_report_alone (test_contract.Tests.test_cause_cannot_use_report_alone) ... ok
 test_cross_deployment_domain (test_contract.Tests.test_cross_deployment_domain) ... ok
@@ -40,6 +41,6 @@ test_unsupported_outcome_injection (test_contract.Tests.test_unsupported_outcome
 test_validator_rejects_disagreement (test_contract.Tests.test_validator_rejects_disagreement) ... ok
 
 ----------------------------------------------------------------------
-Ran 40 tests in 0.012s
+Ran 41 tests in 0.010s
 
 OK

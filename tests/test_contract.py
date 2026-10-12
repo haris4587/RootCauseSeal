@@ -139,6 +139,16 @@ class Tests(unittest.TestCase):
         def broken(*a,**k): raise RuntimeError('provider unavailable')
         gl.nondet.exec_prompt=broken
         self.assertEqual(c.assess("demo",self.items),c.failure("INVALID_ASSESSMENT"))
+    def test_bounded_citation_repair(self):
+        calls=[]
+        def prompt(p,**kw):
+            calls.append(p); a=answer()
+            if len(calls)==1: a["checks"]["cause"]["citations"][0]["quote"]="Trace reproduction..."
+            return a
+        gl.nondet.exec_prompt=prompt
+        self.assertEqual(c.assess("demo",self.items)["outcome"],"ACTION_REQUIRED")
+        self.assertEqual(len(calls),2)
+        self.assertIn("Quote not found",calls[1])
     def test_tampered_evidence_safe(self):
         self.items[1]["sha256"]='0'*64
         self.assertEqual(c.assess("demo",self.items),c.failure("FINGERPRINT_MISMATCH"))

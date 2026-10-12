@@ -16,6 +16,8 @@ HTTP failures, changed fingerprints, decoding errors, malformed/oversized assess
 
 The owner may retry an inconclusive package three times total; history chains never overwrite earlier decisions. After exhaustion, the package remains INCONCLUSIVE. A changed report or evidence package can register a new case. There is no shared candidate slot for strangers to monopolize and no funds to trap. Availability depends on public GitHub and configured LLM providers.
 
+Each independent semantic audit permits at most two model calls: the initial response and one correction on validation/provider failure. A correction receives the same authenticated artifacts and fixed checks, with bounded validation feedback. Exact quote matching and every schema bound remain mandatory; no fuzzy citation acceptance is used. Failure after both attempts remains INCONCLUSIVE. Bounded diagnostic traces identify validation errors; they do not alter verdicts.
+
 ## Bounds
 
 Maximum 1000 cases per deployment, 3 accepted reviews per case, 2–5 files, 12000 bytes/file and 30000 bytes/package; manifest 6000 characters; URL 350; incident 120; six fixed checks; reason 500/check; summary 800; three citations/check, 350 characters/quote. Responses are downloaded by the host before local byte checking, so the contract bounds accepted data and model input, not the host's network buffering. Semantic equivalence adds one judge call per validator. No external wallet, secrets, payable methods, or cross-contract calls are required.

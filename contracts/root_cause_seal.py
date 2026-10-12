@@ -140,6 +140,9 @@ def assess(incident: str, manifest: list) -> dict:
 incident, timeline, cause, actions, ownership, verification (not a list).
 Each value has state (SUPPORTED/MISSING/CONTRADICTED/UNKNOWN), reason (<=500 chars),
 citations (0-3 objects with source integer and quote exact substring <=350 chars).
+Use SHORT contiguous verbatim spans, preferably 10-100 characters. NEVER insert
+ellipsis (...), combine distant fragments, rewrite punctuation or summarize inside
+a quote. A citation need not reproduce an entire sentence. Copy exact source text.
 SUPPORTED/CONTRADICTED require citations. Supported cause MUST cite non-report evidence.
 summary <=800 chars. Evaluate all six checks independently. Do not return an outcome;
 the contract derives it. For ownership, an unnamed team or 'TBD' is MISSING.
@@ -147,12 +150,17 @@ For verification, 'monitor/improve reliability' without measurable criteria is M
 Shape: {"checks":{"incident":{"state":"SUPPORTED","reason":"...","citations":[{"source":0,"quote":"exact text"}]},"timeline":{...},"cause":{...},"actions":{...},"ownership":{...},"verification":{...}},"summary":"..."}
 """
     data = {"incident": incident, "policy": POLICY, "artifacts": [{"source": i, "role": manifest[i]["role"], "text": t} for i, t in enumerate(texts)]}
-    try:
-        answer = gl.nondet.exec_prompt(GUARD + task + "\nDATA_JSON:\n" + canonical(data), response_format="json")
-        return normalize(answer, texts, manifest)
-    except Exception as exc:
-        gl.trace("RootCauseSeal invalid assessment", str(exc)[:200])
-        return failure("INVALID_ASSESSMENT")
+    prompt = GUARD + task + "\nDATA_JSON:\n" + canonical(data)
+    for attempt in range(2):
+        try:
+            answer = gl.nondet.exec_prompt(prompt, response_format="json")
+            return normalize(answer, texts, manifest)
+        except Exception as exc:
+            detail = str(exc)[:200]
+            gl.trace("RootCauseSeal invalid assessment", detail)
+            # One bounded repair, with the same evidence and every original check.
+            prompt = GUARD + task + "\nYour previous audit failed validation: " + detail + ". Return a full corrected audit. Use short EXACT contiguous quotes copied from the source, NEVER ellipses.\nDATA_JSON:\n" + canonical(data)
+    return failure("INVALID_ASSESSMENT")
 
 
 def equivalent(leader, independent) -> bool:
